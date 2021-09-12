@@ -4,9 +4,10 @@ The first step to initialize the module. You need to pass the normal discord par
 
 ```js
 const discord = require('discord.js')
-const client = new discord.Client()
+const intents = new discord.Intents(32767)
+const client = new discord.Client({intents})
 
-const ghostPing = require('ghost-ping-detector')
+const ghostPing = require('anti-ghost-ping')
 
 client.once('ready', () => {
     console.log('Ready')
